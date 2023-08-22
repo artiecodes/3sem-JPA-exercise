@@ -50,4 +50,8 @@ public class UnicornDAO {
                 .getResultList();
         return unicornList;
     }
+
+    public void close() {
+        emf.close();
+    }
 }

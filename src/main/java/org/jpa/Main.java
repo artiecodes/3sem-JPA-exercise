@@ -10,7 +10,9 @@ public class Main {
         UnicornDAO uDao = new UnicornDAO();
 
         // CREATE and test
+        // TRANSIENT
         Unicorn initialUnicorn = new Unicorn("Jerry", 29, 100);
+        // PERSISTENT
         Unicorn savedUnicorn = uDao.save(initialUnicorn);
         System.out.println("Saved unicorn: " + savedUnicorn.getName());
 
@@ -29,5 +31,9 @@ public class Main {
 
         // !!DELETE!! //
         //uDao.delete(updatedUnicorn.getId());
+
+        // Close session
+        //DETACHED
+        uDao.close();
     }
 }
